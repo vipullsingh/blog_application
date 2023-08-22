@@ -83,7 +83,7 @@
 
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:5000'; // Update this with your API's base URL
+const API_BASE_URL = 'https://blog-app-qu25.onrender.com/'; // Update this with your API's base URL
 
 const api = axios.create({
   baseURL: API_BASE_URL,
