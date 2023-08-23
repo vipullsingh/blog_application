@@ -5,7 +5,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import Feed from './pages/Feed';
 import Login from './components/Auth/Login'
 import Register from './components/Auth/Register';
-import SingleBlog from './pages/SingleBlog'; // Import the SingleBlog component
+import SingleBlog from './pages/SingleBlog'; 
 import UserSingleBlog from './pages/userSingleBlog';
 
 

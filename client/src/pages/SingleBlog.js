@@ -29,7 +29,6 @@ const SingleBlog = () => {
       <p>{blog.content}</p>
       {blog.url && <img src={blog.url} alt={blog.title} />}
       <p>Description: {blog.description}</p>
-      {/* Additional content and styling can be added here */}
     </div>
   );
 };

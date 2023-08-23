@@ -64,7 +64,6 @@ const UserSingleBlog = ({ blog }) => {
   const handleShare = async () => {
     try {
       await shareBlog(blog._id);
-      // You might want to update the local state or refetch blogs after sharing
     } catch (error) {
       console.error('Error sharing blog:', error);
     }

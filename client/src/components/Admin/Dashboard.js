@@ -1,9 +1,8 @@
 import React from 'react';
-import BlogForm from './BlogForm'; // Assuming BlogForm is in the same directory
+import BlogForm from './BlogForm'; 
 import { getAllBlogs } from '../../services/api';
 
 const AdminDashboard = () => {
-  // You might want to fetch and store blogs in state
   const [blogs, setBlogs] = React.useState([]);
 
   React.useEffect(() => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { getAllBlogs } from '../../services/api';
-import Blog from './Blog'; // Assuming Blog is in the same directory
+import Blog from './Blog'; 
 
 const Feed = () => {
   const [blogs, setBlogs] = useState([]);

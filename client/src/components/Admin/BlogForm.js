@@ -1,69 +1,3 @@
-// import React, { useState } from 'react';
-// import { createBlog } from '../../services/api';
-
-// const BlogForm = () => {
-//   const [blogData, setBlogData] = useState({
-//     title: '',
-//     content: '',
-//     url: '',
-//     description: '',
-//   });
-
-//   const handleInputChange = (event) => {
-//     const { name, value } = event.target;
-//     setBlogData({
-//       ...blogData,
-//       [name]: value,
-//     });
-//   };
-
-//   const handleSubmit = async (event) => {
-//     event.preventDefault();
-//     try {
-//       await createBlog(blogData);
-//       alert('Blog created successfully!');
-//       // Clear form fields after successful creation
-//       setBlogData({
-//         title: '',
-//         content: '',
-//         url: '',
-//         description: '',
-//       });
-//     } catch (error) {
-//       console.error('Error creating blog:', error);
-//       alert('Blog creation failed. Please try again.');
-//     }
-//   };
-
-//   return (
-//     <div>
-//       <h2>Create a New Blog</h2>
-//       <form onSubmit={handleSubmit}>
-//         <div>
-//           <label>Title</label>
-//           <input type="text" name="title" value={blogData.title} onChange={handleInputChange} required />
-//         </div>
-//         <div>
-//           <label>Content</label>
-//           <textarea name="content" value={blogData.content} onChange={handleInputChange} required />
-//         </div>
-//         <div>
-//           <label>URL</label>
-//           <input type="url" name="url" value={blogData.url} onChange={handleInputChange} />
-//         </div>
-//         <div>
-//           <label>Description</label>
-//           <textarea name="description" value={blogData.description} onChange={handleInputChange} />
-//         </div>
-//         <button type="submit">Create Blog</button>
-//       </form>
-//     </div>
-//   );
-// };
-
-// export default BlogForm;
-
-
 import React, { useState, useEffect } from 'react';
 import { createBlog, updateBlogById } from '../../services/api';
 
@@ -119,27 +53,52 @@ const BlogForm = ({ selectedBlog, setSelectedBlog }) => {
   };
 
   return (
-    <div>
-      <h2>{selectedBlog ? 'Edit Blog' : 'Create a New Blog'}</h2>
-      <form onSubmit={handleSubmit}>
-        {/* ... Form input fields */}
-         <div>
-           <label>Title</label>
-           <input type="text" name="title" value={blogData.title} onChange={handleInputChange} required />
-         </div>
-         <div>
-           <label>Content</label>
-           <textarea name="content" value={blogData.content} onChange={handleInputChange} required />
-         </div>
-         <div>
-           <label>URL</label>
-           <input type="url" name="url" value={blogData.url} onChange={handleInputChange} />
-         </div>
-         <div>
-           <label>Description</label>
-           <textarea name="description" value={blogData.description} onChange={handleInputChange} />
-         </div>
-        <button type="submit">{selectedBlog ? 'Update Blog' : 'Create Blog'}</button>
+    <div className="blog-form">
+      <h2 className="form-title">{selectedBlog ? 'Edit Blog' : 'Create a New Blog'}</h2>
+      <form onSubmit={handleSubmit} className="form">
+        <div className="form-group">
+          <label className="form-label">Title</label>
+          <input
+            type="text"
+            name="title"
+            value={blogData.title}
+            onChange={handleInputChange}
+            className="form-input"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label className="form-label">Content</label>
+          <textarea
+            name="content"
+            value={blogData.content}
+            onChange={handleInputChange}
+            className="form-textarea"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label className="form-label">URL</label>
+          <input
+            type="url"
+            name="url"
+            value={blogData.url}
+            onChange={handleInputChange}
+            className="form-input"
+          />
+        </div>
+        <div className="form-group">
+          <label className="form-label">Description</label>
+          <textarea
+            name="description"
+            value={blogData.description}
+            onChange={handleInputChange}
+            className="form-textarea"
+          />
+        </div>
+        <button type="submit" className="form-button">
+          {selectedBlog ? 'Update Blog' : 'Create Blog'}
+        </button>
       </form>
     </div>
   );

@@ -5,16 +5,15 @@ import { loginUser } from '../../services/api';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const navigate = useNavigate(); // Get the navigate function
+  const navigate = useNavigate(); 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
       const response = await loginUser({ email, password });
-      // Update your code here to use response.token and response.isAdmin
       localStorage.setItem('authToken', response.token);
       localStorage.setItem('isAdmin', response.isAdmin);
-      navigate(response.isAdmin ? '/admin' : '/feed'); // Navigate based on isAdmin
+      navigate(response.isAdmin ? '/admin' : '/feed'); 
     } catch (error) {
       console.error('Error during login:', error);
       alert('Login failed. Please check your credentials and try again.');
