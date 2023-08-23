@@ -5,8 +5,7 @@ import AdminDashboard from './pages/AdminDashboard';
 import Feed from './pages/Feed';
 import Login from './components/Auth/Login'
 import Register from './components/Auth/Register';
-import SingleBlog from './pages/SingleBlog'; 
-import UserSingleBlog from './pages/userSingleBlog';
+import SingleBlog from './pages/SingleBlog';
 
 
 function App() {
@@ -19,7 +18,6 @@ function App() {
         <Route path="/login" element={<Login/>} />
         <Route path="/" element={<Home />}></Route>
         <Route path="/blogs/:blogId" element={<SingleBlog />} />
-        <Route path="/userblogs/:blogId" element={<UserSingleBlog />} />
       </Routes>
     </Router>
   );
